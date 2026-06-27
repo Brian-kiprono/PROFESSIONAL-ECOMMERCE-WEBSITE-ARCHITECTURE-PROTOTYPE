@@ -1,0 +1,285 @@
+### 2. `index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veloce // Premium Modern eCommerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="announcement-bar">
+        <div class="container bar-content">
+            <p>⚡ Flash Sale: 20% Off + Free Shipping over $50! <a href="#shop">Shop Now</a></p>
+            <div class="bar-actions">
+                <span><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</span>
+                <select name="currency" aria-label="Currency Selector">
+                    <option value="USD">USD $</option>
+                    <option value="EUR">EUR €</option>
+                </select>
+                <select name="language" aria-label="Language Selector">
+                    <option value="EN">EN</option>
+                    <option value="FR">FR</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-grid">
+            <button class="mobile-menu-toggle" aria-label="Open Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a href="#" class="logo">VELOCE<span>.</span></a>
+
+            <nav class="desktop-nav">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#shop" class="nav-link">Shop</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#deals" class="nav-link">Deals</a>
+            </nav>
+
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Search products, brands, categories..." aria-label="Search">
+            </div>
+
+            <div class="header-user-actions">
+                <a href="#" class="action-btn" aria-label="User Account"><i class="fa-regular fa-user"></i></a>
+                <a href="#" class="action-btn" aria-label="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge">3</span>
+                </a>
+                <button class="action-btn" id="cart-toggle-btn" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <div class="container hero-content">
+                <span class="hero-tag">New Arrivals 2026</span>
+                <h1>The Art of Minimal Living</h1>
+                <p>Discover premium engineering, clean aesthetics, and unparalleled comfort designed for modern life.</p>
+                <div class="hero-btns">
+                    <a href="#shop" class="btn btn-primary">Shop Collection</a>
+                    <a href="#featured" class="btn btn-secondary">Explore Details</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="deals" class="flash-sale-section container">
+            <div class="section-header">
+                <h2>Flash Sale Ends In:</h2>
+                <div id="countdown" class="countdown-timer">
+                    <div><span id="hours">00</span><small>Hrs</small></div>:
+                    <div><span id="minutes">00</span><small>Min</small></div>:
+                    <div><span id="seconds">00</span><small>Sec</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories" class="categories-section container">
+            <div class="category-grid">
+                <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80')">
+                    <h3>Electronics</h3>
+                </div>
+                <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80')">
+                    <h3>Fashion</h3>
+                </div>
+                <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80')">
+                    <h3>Footwear</h3>
+                </div>
+                <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=500&q=80')">
+                    <h3>Beauty</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="shop" class="shop-layout container">
+            <aside class="sidebar-filters">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <h4>Category</h4>
+                    <label><input type="checkbox" checked> Audio Gear</label>
+                    <label><input type="checkbox"> Apparel</label>
+                    <label><input type="checkbox"> Timepieces</label>
+                </div>
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <input type="range" min="0" max="500" value="250" class="slider">
+                    <div class="price-labels"><span>$0</span><span>$500</span></div>
+                </div>
+                <div class="filter-group">
+                    <h4>Availability</h4>
+                    <label><input type="checkbox"> In Stock Only</label>
+                </div>
+            </aside>
+
+            <div class="products-container">
+                <div class="grid-controls">
+                    <p>Showing 1–3 of 3 results</p>
+                    <select name="sort" aria-label="Sort Options">
+                        <option value="featured">Sort by: Featured</option>
+                        <option value="low-high">Price: Low to High</option>
+                        <option value="high-low">Price: High to Low</option>
+                    </select>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card" data-id="1" data-name="Aero Dynamic Headphones" data-price="299.00" data-img="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80">
+                        <div class="card-image-wrapper">
+                            <span class="discount-badge">-15%</span>
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Aero Dynamic Headphones">
+                            <div class="card-actions">
+                                <button aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button aria-label="Quick View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="brand">AeroLabs</span>
+                            <h3>Aero Dynamic Headphones</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8 <span>(124)</span></div>
+                            <div class="price-row">
+                                <span class="price">$299.00</span>
+                                <span class="old-price">$349.00</span>
+                            </div>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="2" data-name="Minimalist Chronograph" data-price="180.00" data-img="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Minimalist Chronograph">
+                            <div class="card-actions">
+                                <button aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button aria-label="Quick View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="brand">Chronos</span>
+                            <h3>Minimalist Chronograph</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(86)</span></div>
+                            <div class="price-row">
+                                <span class="price">$180.00</span>
+                            </div>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="3" data-name="Suede Eco-Sneaker" data-price="120.00" data-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80">
+                        <div class="card-image-wrapper">
+                            <span class="discount-badge">Hot</span>
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Suede Eco-Sneaker">
+                            <div class="card-actions">
+                                <button aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button aria-label="Quick View"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="brand">TerraFoot</span>
+                            <h3>Suede Eco-Sneaker</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.6 <span>(210)</span></div>
+                            <div class="price-row">
+                                <span class="price">$120.00</span>
+                            </div>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" class="tabs-section container">
+            <div class="tabs-header">
+                <button class="tab-trigger active" data-tab="details-desc">Description</button>
+                <button class="tab-trigger" data-tab="details-specs">Specifications</button>
+                <button class="tab-trigger" data-tab="details-reviews">Reviews</button>
+            </div>
+            <div class="tabs-content">
+                <div id="details-desc" class="tab-panel active">
+                    <p>Every product in our collection features meticulous materials curated for structural resilience, pure luxury tactile texture, and carbon-neutral lifecycle paths.</p>
+                </div>
+                <div id="details-specs" class="tab-panel">
+                    <ul>
+                        <li><strong>Material:</strong> Recycled Aeronautical Polymers</li>
+                        <li><strong>Weight:</strong> 240g Lightweight Architecture</li>
+                        <li><strong>Connectivity:</strong> Bluetooth 5.3 Low Energy Engine</li>
+                    </ul>
+                </div>
+                <div id="details-reviews" class="tab-panel">
+                    <p>⭐⭐⭐⭐⭐ "Remarkable speed of delivery and architectural fidelity. Feels incredibly high end." - <strong>Marcus V. (Verified)</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <h3>Your Cart (<span id="cart-drawer-count">0</span>)</h3>
+            <button id="cart-close-btn" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-items" id="cart-drawer-items">
+            <p class="empty-cart-msg">Your shopping bag is completely empty.</p>
+        </div>
+        <div class="drawer-footer">
+            <div class="subtotal-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="alert('Proceeding to Premium Checkout Workflow...')">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="mobile-bottom-nav">
+        <a href="#" class="mob-nav-item"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="#shop" class="mob-nav-item"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></a>
+        <a href="#categories" class="mob-nav-item"><i class="fa-solid fa-layer-group"></i><span>Categories</span></a>
+        <button class="mob-nav-item" id="mobile-cart-trigger"><i class="fa-solid fa-bag-shopping"></i><span>Cart</span></button>
+    </div>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Journal</a>
+            </div>
+            <div>
+                <h4>Customer Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Returns & Shipping</a>
+                <a href="#">Track Order</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="#">Privacy Framework</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Matrices</a>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <p>Subscribe to secure private collection drops.</p>
+                <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+                    <input type="email" placeholder="Email address" aria-label="Newsletter Email" style="padding:0.75rem; border:1px solid #333; background:#111; color:white; border-radius:4px; flex:1;">
+                    <button class="btn btn-primary" style="padding:0.75rem;">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="container bottom-footer">
+            <p>&copy; 2026 VELOCE Inc. All architecture designs standard.</p>
+            <div class="payment-methods"><i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i> <i class="fa-brands fa-cc-apple-pay"></i></div>
+        </div>
+    </footer>
+
+</body>
+</html>
